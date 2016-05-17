@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Alexs" />
+
+	<title>Обекты</title>
+</head>
+
+<body>
+<script>
+
+// CLASS WORK
+/* Написать программу, которая будет принимать от пользователя данные: 
+    ФИО. 
+    Дату рождения.
+    Адрес: 
+         город, 
+         улица, 
+         дом, 
+         квартира. 
+    Место работы:     
+        адрес: 
+        улица, 
+        дом, 
+        офис.
+        название компании, и хранить их в объекте по одноименным свойствам.     */
+
+
+var human = new Object();
+
+human.fio = new Object();
+human.DOB = new Object();
+human.address = new Object();
+human.addressWork = new Object();   
+    
+    human.fio.patronymic = prompt("Введите вашу фамилию: ", "Петров");
+    human.fio.firstName = prompt("Введите ваше имя: ", "Иавн");
+    human.fio.secondName = prompt("Введите ваше отчество: ", "Иавнович");
+    
+    human.DOB = prompt("Введите дату рождения: ", "31.10.1988");
+    
+    human.address.city = prompt("Введите ваш город: ", "Киев");
+    human.address.street = prompt("Введите вашу улицу: ", "Победы");
+    human.address.house = prompt("Введите ваш дом: ", "18");
+    human.address.apartment = prompt("Введите вашу квартиру: ", "20");
+    
+    human.addressWork.street = prompt("Введите улицу вашей роботы: ", "Красноткацкая");
+    human.addressWork.house = prompt("Введите номер дома роботы: ", "42");
+    human.addressWork.office = prompt("Введите номер офиса: ", "315");
+    human.addressWork.name = prompt("Введите название компании: ", "infocar");
+    
+    document.write("Вас зовут: " + human.fio.firstName + ", " + human.fio.secondName + ", " + human.fio.patronymic + "; <br /> Вы роделись: " + human.DOB + "; <br />");
+    document.write("Вы проживаете по адрессу: г. " + human.address.city + ", улица " +  human.address.street + ", дом " + human.address.house + ", номер квартиры " + human.address.apartment + "; <br />");
+    document.write("Адрес вашей роботы: ул. " + human.addressWork.street + ", дом " + human.addressWork.house + ", номер дома " + human.addressWork.office + " имя вашей компании: " + human.addressWork.name + ". <br /><br />");
+    
+    document.write("Тип переменной human: " + typeof(human));
+    
+</script>
+
+
+
+</body>
+</html>

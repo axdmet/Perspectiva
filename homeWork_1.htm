@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Alexs" />
+
+	<title>Обекты</title>
+</head>
+
+<body>
+
+<script>
+
+// HOME WORK 1
+/* Напишите функцию, которая будет в качестве аргумента принимать объект и проводить поиск в нем свойства со значение «true», 
+ если оно найдено выводится сообщений «В проверяемом объекте найдено свойство true». */
+
+var human = {
+    firstName: "Alex",
+    secondName: "Jazun",
+    man: true,
+    age: 27,
+}
+
+function SearchTrue(human) {
+
+    for (var key in human) {
+        if (human[key] == true) {
+            document.write("В проверяемом объекте найдено свойство: " + human[key]);
+            break;
+        }
+    }
+}
+SearchTrue(human);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Alexs" />
+
+	<title>Обекты</title>
+</head>
+<body>
+<script>
+
+// home work 1
+//  Напишете функцию, которая будет принимать в качестве аргумента число и определять делится или оно на: 2, 5, 20, 40, одновременно.
+
+var a = prompt("Введите число для определения. Делится ли оно на: 2, 5, 20, 40, одновременно.", 777);
+
+ 
+
+function NumberDiv(a) {
+    
+    var NumberArr = [2, 5, 20, 40];
+    
+    var numberMin = (Math.min.apply({},NumberArr)) // 2
+    var numberMax = (Math.max.apply({},NumberArr)) // 40
+    
+    for (var i = 0; i < NumberArr.length; i++){      
+    var c = a / NumberArr[i]; 
+    
+    if (c == parseInt(c) && a >= numberMax || a <= numberMin) {
+        document.write("Вы ввели чило которое делиться на: 2, 5, 20, 40 <br />");
+        break;
+    } else {
+        document.write("Вы ввели чило которое НЕ делиться на: 2, 5, 20, 40 <br />");
+        break;
+    }
+  } 
+}
+
+	NumberDiv(a);
+
+</script>
+
+</body>
+</html>

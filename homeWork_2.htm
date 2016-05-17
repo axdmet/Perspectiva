@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="content-type" content="text/html" />
+	<meta name="author" content="Alexs" />
+
+	<title>Обекты</title>
+</head>
+
+<body>
+<script>
+
+// HOME WORK 2
+
+/*  Разработайте функцию-конструктор, которая будет создавать объект Human(человек) создайте массив объектов и 
+    реализуйте функцию, которая будет сортировать элементы массива по значению свойства Age по возрастанию или 
+    по убыванию.*/
+
+var Human = function(name) {
+    this.name = name;
+    this.canSpeak = true;
+    this.age = 0;
+}
+
+
+var vanya = new Human('Ваня');
+    vanya.age = 21;
+
+var katya = new Human('Катя');
+    katya.age = 42;
+
+var max = new Human('Максим');
+    max.age = 53;
+
+var vasya = new Human('Вася');
+    vasya.age = 13;
+
+var vitya = new Human('Витя');
+    vitya.age = 39;
+
+
+
+var people = [vanya, katya, max, vasya, vitya];
+
+function BubbleSort(people)       // people отсортировать по возрастанию (пузырьковая сортировка).
+{                            
+    var n = people.length;
+    for (var i = 0; i < n-1; i++)
+     { for (var j = 0; j < n-1-i; j++)
+        { if (people[j+1].age < people[j].age )
+           { var t = people[j+1]; people[j+1] = people[j]; people[j] = t; }
+        }
+     }                     
+    return people;    // На выходе сортированный по возрастанию массив people.
+}
+
+var people = BubbleSort(people);
+
+for (var i = 0; i < people.length; i++) { // Выведем отсортированый масив по свойствам age
+    var n = i+1;
+    document.write("Елемент массива № " + n + " - " + people[i].name + ", его/ее возраст = " + people[i].age + " ; <br />");
+}
+
+document.write(typeof(people) + "<br />");
+document.write(typeof(Human));
+
+
+
+
+</script>
+
+
+</body>
+</html>
